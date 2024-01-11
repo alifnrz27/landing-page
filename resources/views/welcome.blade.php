@@ -1,6 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
+<?php
+function formatRupiah($angka) {
+    $rupiah = number_format($angka, 0, ',', '.');
+    return 'Rp ' . $rupiah;
+}
+?>
 
     <style>
         @media(prefers-color-scheme: dark){ .bg-dots{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(200,200,255,0.15)'/%3E%3C/svg%3E");}}@media(prefers-color-scheme: light){.bg-dots{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,50,0.10)'/%3E%3C/svg%3E")}}
@@ -21,7 +27,25 @@
         <div class="inside-header grid-container flex justify-between" style="padding-top:20px">
             <div class="site-branding-container">
                 <div class="site-logo">
-                    <a href="https://dewabiz.com/" rel="home"><img class="header-image is-logo-image" alt="DewaBiz.com" src="{{ asset('src/template/logo_big_inverse.svg') }}" width="0" height="0"></a>
+                    <a href="https://dewabiz.com/" rel="home" class="flex gap-2 items-center">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_15_1062)">
+                            <path d="M39.9448 21.4998H32.8002C26.5593 21.4998 21.5002 26.559 21.5002 32.7998V39.9444C31.3501 39.214 39.2144 31.3497 39.9448 21.4998Z" fill="white"/>
+                            <path d="M18.5003 39.9444V32.7998C18.5003 26.559 13.4411 21.4998 7.20026 21.4998H0.0556641C0.785998 31.3497 8.65036 39.214 18.5003 39.9444Z" fill="white"/>
+                            <path d="M39.9448 18.4998C39.2144 8.64987 31.3501 0.78551 21.5002 0.0551758V7.19977C21.5002 13.4406 26.5593 18.4998 32.8002 18.4998H39.9448Z" fill="white"/>
+                            <path d="M18.5003 0.0551758C8.65036 0.78551 0.785998 8.64987 0.0556641 18.4998H7.20026C13.4411 18.4998 18.5003 13.4406 18.5003 7.19977V0.0551758Z" fill="white"/>
+                            <path d="M13.583 19.9998C16.3555 18.6145 18.615 16.355 20.0002 13.5825C21.3855 16.355 23.6449 18.6145 26.4175 19.9998C23.6449 21.385 21.3855 23.6445 20.0002 26.417C18.615 23.6445 16.3555 21.385 13.583 19.9998Z" fill="#FFDE81"/>
+                            </g>
+                            <defs>
+                            <clipPath id="clip0_15_1062">
+                            <rect width="40" height="40" fill="white"/>
+                            </clipPath>
+                            </defs>
+                        </svg>
+                        <div class="text-[16px] font-bold text-white">
+                            Customer Loyalty
+                        </div>
+                    </a>
                 </div>
                 <div class="site-branding">
                     <p class="site-description" itemprop="description">Host Your Imagination</p>
@@ -217,7 +241,22 @@
                                         </div> --}}
                                     </div>
                                     <div class="gb-container gb-container-00503323">
-                                        <figure class="gb-block-image gb-block-image-83e79a88"><img fetchpriority="high" decoding="async" width="600" height="815" class="gb-image gb-image-83e79a88" src="./DewaBiz.com_ Web Hosting, Server &amp; Domain Murah_files/wp-heading.png" alt="" title="wp-heading" srcset="https://dewabiz.com/wp-content/uploads/2023/08/wp-heading.png 600w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-221x300.png 221w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-18x24.png 18w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-27x36.png 27w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-35x48.png 35w" sizes="(max-width: 600px) 100vw, 600px"></figure>
+                                        {{-- <figure class="gb-block-image gb-block-image-83e79a88"><img fetchpriority="high" decoding="async" width="600" height="815" class="gb-image gb-image-83e79a88" src="./DewaBiz.com_ Web Hosting, Server &amp; Domain Murah_files/wp-heading.png" alt="" title="wp-heading" srcset="https://dewabiz.com/wp-content/uploads/2023/08/wp-heading.png 600w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-221x300.png 221w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-18x24.png 18w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-27x36.png 27w, https://dewabiz.com/wp-content/uploads/2023/08/wp-heading-35x48.png 35w" sizes="(max-width: 600px) 100vw, 600px"></figure> --}}
+                                        <svg width="250" height="250" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <g clip-path="url(#clip0_15_1062)">
+                                            <path d="M39.9448 21.4998H32.8002C26.5593 21.4998 21.5002 26.559 21.5002 32.7998V39.9444C31.3501 39.214 39.2144 31.3497 39.9448 21.4998Z" fill="white"/>
+                                            <path d="M18.5003 39.9444V32.7998C18.5003 26.559 13.4411 21.4998 7.20026 21.4998H0.0556641C0.785998 31.3497 8.65036 39.214 18.5003 39.9444Z" fill="white"/>
+                                            <path d="M39.9448 18.4998C39.2144 8.64987 31.3501 0.78551 21.5002 0.0551758V7.19977C21.5002 13.4406 26.5593 18.4998 32.8002 18.4998H39.9448Z" fill="white"/>
+                                            <path d="M18.5003 0.0551758C8.65036 0.78551 0.785998 8.64987 0.0556641 18.4998H7.20026C13.4411 18.4998 18.5003 13.4406 18.5003 7.19977V0.0551758Z" fill="white"/>
+                                            <path d="M13.583 19.9998C16.3555 18.6145 18.615 16.355 20.0002 13.5825C21.3855 16.355 23.6449 18.6145 26.4175 19.9998C23.6449 21.385 21.3855 23.6445 20.0002 26.417C18.615 23.6445 16.3555 21.385 13.583 19.9998Z" fill="#FFDE81"/>
+                                            </g>
+                                            <defs>
+                                            <clipPath id="clip0_15_1062">
+                                            <rect width="40" height="40" fill="white"/>
+                                            </clipPath>
+                                            </defs>
+                                        </svg>
+
                                     </div>
                                 </div>
                                 <div class="gb-shapes">
@@ -263,11 +302,12 @@
                                         <div class="gb-container gb-container-e64a644b gb-tabs__items">
                                             <div class="gb-container gb-container-d54610ca gb-tabs__item gb-tabs__item-open">
                                                 <div class="gb-grid-wrapper gb-grid-wrapper-83dfd63a">
+                                                    @foreach ($clp as $data)
                                                     <div class="gb-grid-column gb-grid-column-c95333fb">
                                                         <div class="gb-container gb-container-c95333fb shadow">
                                                             <div class="gb-container gb-container-512b51b0">
-                                                                <h3 class="gb-headline gb-headline-acf0f0fc gb-headline-text gb-headline-5624a144">Marketer Pro</h3>
-                                                                <h3 class="gb-headline gb-headline-449645de gb-headline-text gb-headline-31a25ca3">CLP Website</h3>
+                                                                <h3 class="gb-headline gb-headline-acf0f0fc gb-headline-text gb-headline-5624a144">{{ $data['title'] }}</h3>
+                                                                <h3 class="gb-headline gb-headline-449645de gb-headline-text gb-headline-31a25ca3">{{ $data['subtitle'] }}</h3>
                                                             </div>
                                                             <div class="gb-container gb-container-feb67a31">
                                                                 {{-- <div class="gb-grid-wrapper gb-grid-wrapper-f8d57267">
@@ -293,42 +333,28 @@
                                                                 <div class="gb-container gb-container-e2d6cab4">
                                                                     <div class="gb-container gb-container-f9fcf455">
                                                                         <div class="gb-container gb-container-67df1fb7">
-                                                                            <p class="gb-headline gb-headline-b6e867d0 gb-headline-text coret">Rp 1.375.000</p>
-                                                                            <p class="gb-headline gb-headline-239efdf8 gb-headline-text gb-headline-8b6a15a8 gb-headline-96cf02dc">Diskon 60%</p>
+                                                                            <p class="gb-headline gb-headline-b6e867d0 gb-headline-text coret">{{ formatRupiah($data['price_first_time']) }}</p>
+                                                                            <p class="gb-headline gb-headline-239efdf8 gb-headline-text gb-headline-8b6a15a8 gb-headline-96cf02dc">Diskon {{ $data['discount'] }}%</p>
                                                                         </div>
-                                                                        <p class="gb-headline gb-headline-f6a28754 gb-headline-text gb-headline-1d605367">Rp 550.000</p>
+                                                                        <p class="gb-headline gb-headline-f6a28754 gb-headline-text gb-headline-1d605367">{{ formatRupiah(((100 - $data['discount'])/100) * $data['price_first_time']) }}</p>
                                                                     </div>
                                                                     <a class="gb-button gb-button-cf611634 gb-button-text gb-button-c7e37e12 gb-button-22518348" href="https://my.dewabiz.com/cart.php?a=add&amp;pid=261&amp;billingcycle=annually" target="_blank" rel="noopener noreferrer">Order Now</a>
-                                                                    <p class="gb-headline gb-headline-44cb3316 gb-headline-text gb-headline-2cfc6ab6">Rp 550.000 pertahun ketika diperpanjang</p>
+                                                                    <p class="gb-headline gb-headline-44cb3316 gb-headline-text gb-headline-2cfc6ab6">{{ formatRupiah($data['price']) }} pertahun ketika diperpanjang</p>
                                                                 </div>
                                                                 <div class="gb-container gb-container-b3aaa652">
                                                                     <div class="gb-container gb-container-e0398516">
                                                                         <p class="gb-headline gb-headline-029e44f2 gb-headline-text">Fitur Unggulan</p>
                                                                         <div class="gb-container gb-container-805b93f2">
+                                                                            @foreach ($data['features'] as $feature)
                                                                             <div class="gb-container gb-container-9c3020a6">
                                                                                 <p class="gb-headline gb-headline-8e487948 gb-headline-06746a0b">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Dashboard</span>
+                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">{{ $feature['name'] }}</span>
                                                                                 </p>
-                                                                                {{-- <span class="gb-button gb-button-9e5b0966 gb-button-4b60495c tooltip" data-tooltip="Tidak ada limitasi website"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span> --}}
+                                                                                @if($feature['hint'])
+                                                                                <span class="gb-button gb-button-9e5b0966 gb-button-4b60495c tooltip" data-tooltip="{{ $feature['hint'] }}"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span>
+                                                                                @endif
                                                                             </div>
-                                                                            <div class="gb-container gb-container-ebdcaaa6">
-                                                                                <p class="gb-headline gb-headline-f9153486 gb-headline-06746a0b">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Claim</span>
-                                                                                </p>
-                                                                                {{-- <span class="gb-button gb-button-7cb7eca0 gb-button-4b60495c tooltip" data-tooltip="Gratis domain .xyz, .web.id, .or.id, .ac.id, .sch.id, .biz.id, .my.id, .ponpes.id"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span> --}}
-                                                                            </div>
-                                                                            <p class="gb-headline gb-headline-a4647b8c gb-headline-e5c6fdb2">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Promo</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-a61f7ccf gb-headline-e44cba63">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Point</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-ccad2e6c gb-headline-41d926d5">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">5 Stores</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-c605088c gb-headline-7b50d458">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">5 Users</span>
-                                                                            </p>
+                                                                            @endforeach
                                                                         </div>
                                                                         {{-- <p class="gb-headline gb-headline-dd79750a gb-headline-text gb-headline-fce985dd">Fitur Keamanan</p>
                                                                         <div class="gb-container gb-container-773d2805">
@@ -353,186 +379,8 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="gb-grid-column gb-grid-column-c95333fb">
-                                                        <div class="gb-container gb-container-c95333fb shadow">
-                                                            <div style="background-color: rgb(249 115 22 / var(--tw-bg-opacity));" class="gb-container bg-orange-500 gb-container-512b51b0">
-                                                                <h3 class="gb-headline gb-headline-acf0f0fc gb-headline-text gb-headline-5624a144">Business Pro</h3>
-                                                                <h3 class="gb-headline gb-headline-449645de gb-headline-text gb-headline-31a25ca3">CLP Website</h3>
-                                                            </div>
-                                                            <div class="gb-container gb-container-feb67a31">
-                                                                {{-- <div class="gb-grid-wrapper gb-grid-wrapper-f8d57267">
-                                                                    <div class="gb-grid-column gb-grid-column-0668a039">
-                                                                        <div class="gb-container gb-container-0668a039">
-                                                                            <h6 class="gb-headline gb-headline-2c1025b2 gb-headline-text">RAM</h6>
-                                                                            <h6 class="gb-headline gb-headline-e09fa01d gb-headline-text gb-headline-c59df076 gb-headline-c5914076">1 GB</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="gb-grid-column gb-grid-column-879d2fcf">
-                                                                        <div class="gb-container gb-container-879d2fcf">
-                                                                            <h6 class="gb-headline gb-headline-c63d089e gb-headline-text">CPU</h6>
-                                                                            <h6 class="gb-headline gb-headline-a49d46d5 gb-headline-text gb-headline-73dff66e gb-headline-73c2f66e">1 Core</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="gb-grid-column gb-grid-column-22695e59">
-                                                                        <div class="gb-container gb-container-22695e59">
-                                                                            <h6 class="gb-headline gb-headline-480cf687 gb-headline-text">Storage</h6>
-                                                                            <h6 class="gb-headline gb-headline-45b43935 gb-headline-text gb-headline-f5dfd9e4 gb-headline-f5acd9e4">Unlimited</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </div> --}}
-                                                                <div class="gb-container gb-container-e2d6cab4">
-                                                                    <div class="gb-container gb-container-f9fcf455">
-                                                                        <div class="gb-container gb-container-67df1fb7">
-                                                                            <p class="gb-headline gb-headline-b6e867d0 gb-headline-text coret">Rp 1.500.000</p>
-                                                                            <p class="gb-headline gb-headline-239efdf8 gb-headline-text gb-headline-8b6a15a8 gb-headline-96cf02dc">Diskon 60%</p>
-                                                                        </div>
-                                                                        <p class="gb-headline gb-headline-f6a28754 gb-headline-text gb-headline-1d605367">Rp 600.000</p>
-                                                                    </div>
-                                                                    <a class="gb-button gb-button-cf611634 gb-button-text gb-button-c7e37e12 gb-button-22518348" href="https://my.dewabiz.com/cart.php?a=add&amp;pid=261&amp;billingcycle=annually" target="_blank" rel="noopener noreferrer">Order Now</a>
-                                                                    <p class="gb-headline gb-headline-44cb3316 gb-headline-text gb-headline-2cfc6ab6">Rp 700.000 pertahun ketika diperpanjang</p>
-                                                                </div>
-                                                                <div class="gb-container gb-container-b3aaa652">
-                                                                    <div class="gb-container gb-container-e0398516">
-                                                                        <p class="gb-headline gb-headline-029e44f2 gb-headline-text">Fitur Unggulan</p>
-                                                                        <div class="gb-container gb-container-805b93f2">
-                                                                            <div class="gb-container gb-container-9c3020a6">
-                                                                                <p class="gb-headline gb-headline-8e487948 gb-headline-06746a0b">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Dashboard</span>
-                                                                                </p>
-                                                                                {{-- <span class="gb-button gb-button-9e5b0966 gb-button-4b60495c tooltip" data-tooltip="Tidak ada limitasi website"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span> --}}
-                                                                            </div>
-                                                                            <div class="gb-container gb-container-ebdcaaa6">
-                                                                                <p class="gb-headline gb-headline-f9153486 gb-headline-06746a0b">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Claim</span>
-                                                                                </p>
-                                                                                {{-- <span class="gb-button gb-button-7cb7eca0 gb-button-4b60495c tooltip" data-tooltip="Gratis domain .xyz, .web.id, .or.id, .ac.id, .sch.id, .biz.id, .my.id, .ponpes.id"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span> --}}
-                                                                            </div>
-                                                                            <p class="gb-headline gb-headline-a4647b8c gb-headline-e5c6fdb2">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Promo</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-a61f7ccf gb-headline-e44cba63">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Point</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-ccad2e6c gb-headline-41d926d5">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">10 Stores</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-c605088c gb-headline-7b50d458">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">10 Users</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        {{-- <p class="gb-headline gb-headline-dd79750a gb-headline-text gb-headline-fce985dd">Fitur Keamanan</p>
-                                                                        <div class="gb-container gb-container-773d2805">
-                                                                            <div class="gb-container gb-container-f6883ef3">
-                                                                                <p class="gb-headline gb-headline-85060d04 gb-headline-a129d520">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Proteksi DDoS <strong><strong>Canggih</strong></strong></span>
-                                                                                </p>
-                                                                                <span class="gb-button gb-button-28c7ab48 tooltip" data-tooltip="Gratis Proteksi DDOS Attack"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span>
-                                                                            </div>
-                                                                            <p class="gb-headline gb-headline-77748c6f">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text"><strong>Web Application</strong> Firewall</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-809be93d">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Nameserver Dilindungi Cloudflare</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-6f3728b2">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Pemindai <strong>Malware</strong></span>
-                                                                            </p>
-                                                                        </div> --}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="gb-grid-column gb-grid-column-c95333fb">
-                                                        <div class="gb-container gb-container-c95333fb shadow">
-                                                            <div class="gb-container gb-container-512b51b0">
-                                                                <h3 class="gb-headline gb-headline-acf0f0fc gb-headline-text gb-headline-5624a144">Professional Pro</h3>
-                                                                <h3 class="gb-headline gb-headline-449645de gb-headline-text gb-headline-31a25ca3">CLP Website</h3>
-                                                            </div>
-                                                            <div class="gb-container gb-container-feb67a31">
-                                                                {{-- <div class="gb-grid-wrapper gb-grid-wrapper-f8d57267">
-                                                                    <div class="gb-grid-column gb-grid-column-0668a039">
-                                                                        <div class="gb-container gb-container-0668a039">
-                                                                            <h6 class="gb-headline gb-headline-2c1025b2 gb-headline-text">RAM</h6>
-                                                                            <h6 class="gb-headline gb-headline-e09fa01d gb-headline-text gb-headline-c59df076 gb-headline-c5914076">1 GB</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="gb-grid-column gb-grid-column-879d2fcf">
-                                                                        <div class="gb-container gb-container-879d2fcf">
-                                                                            <h6 class="gb-headline gb-headline-c63d089e gb-headline-text">CPU</h6>
-                                                                            <h6 class="gb-headline gb-headline-a49d46d5 gb-headline-text gb-headline-73dff66e gb-headline-73c2f66e">1 Core</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="gb-grid-column gb-grid-column-22695e59">
-                                                                        <div class="gb-container gb-container-22695e59">
-                                                                            <h6 class="gb-headline gb-headline-480cf687 gb-headline-text">Storage</h6>
-                                                                            <h6 class="gb-headline gb-headline-45b43935 gb-headline-text gb-headline-f5dfd9e4 gb-headline-f5acd9e4">Unlimited</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </div> --}}
-                                                                <div class="gb-container gb-container-e2d6cab4">
-                                                                    <div class="gb-container gb-container-f9fcf455">
-                                                                        <div class="gb-container gb-container-67df1fb7">
-                                                                            <p class="gb-headline gb-headline-b6e867d0 gb-headline-text coret">Rp 2.000.000</p>
-                                                                            <p class="gb-headline gb-headline-239efdf8 gb-headline-text gb-headline-8b6a15a8 gb-headline-96cf02dc">Diskon 60%</p>
-                                                                        </div>
-                                                                        <p class="gb-headline gb-headline-f6a28754 gb-headline-text gb-headline-1d605367">Rp 800.000</p>
-                                                                    </div>
-                                                                    <a class="gb-button gb-button-cf611634 gb-button-text gb-button-c7e37e12 gb-button-22518348" href="https://my.dewabiz.com/cart.php?a=add&amp;pid=261&amp;billingcycle=annually" target="_blank" rel="noopener noreferrer">Order Now</a>
-                                                                    <p class="gb-headline gb-headline-44cb3316 gb-headline-text gb-headline-2cfc6ab6">Rp 900.000 pertahun ketika diperpanjang</p>
-                                                                </div>
-                                                                <div class="gb-container gb-container-b3aaa652">
-                                                                    <div class="gb-container gb-container-e0398516">
-                                                                        <p class="gb-headline gb-headline-029e44f2 gb-headline-text">Fitur Unggulan</p>
-                                                                        <div class="gb-container gb-container-805b93f2">
-                                                                            <div class="gb-container gb-container-9c3020a6">
-                                                                                <p class="gb-headline gb-headline-8e487948 gb-headline-06746a0b">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Dashboard</span>
-                                                                                </p>
-                                                                                {{-- <span class="gb-button gb-button-9e5b0966 gb-button-4b60495c tooltip" data-tooltip="Tidak ada limitasi website"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span> --}}
-                                                                            </div>
-                                                                            <div class="gb-container gb-container-ebdcaaa6">
-                                                                                <p class="gb-headline gb-headline-f9153486 gb-headline-06746a0b">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Claim</span>
-                                                                                </p>
-                                                                                {{-- <span class="gb-button gb-button-7cb7eca0 gb-button-4b60495c tooltip" data-tooltip="Gratis domain .xyz, .web.id, .or.id, .ac.id, .sch.id, .biz.id, .my.id, .ponpes.id"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span> --}}
-                                                                            </div>
-                                                                            <p class="gb-headline gb-headline-a4647b8c gb-headline-e5c6fdb2">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Promo</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-a61f7ccf gb-headline-e44cba63">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Point</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-ccad2e6c gb-headline-41d926d5">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">20 Stores</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-c605088c gb-headline-7b50d458">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">20 Users</span>
-                                                                            </p>
-                                                                        </div>
-                                                                        {{-- <p class="gb-headline gb-headline-dd79750a gb-headline-text gb-headline-fce985dd">Fitur Keamanan</p>
-                                                                        <div class="gb-container gb-container-773d2805">
-                                                                            <div class="gb-container gb-container-f6883ef3">
-                                                                                <p class="gb-headline gb-headline-85060d04 gb-headline-a129d520">
-                                                                                    <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Proteksi DDoS <strong><strong>Canggih</strong></strong></span>
-                                                                                </p>
-                                                                                <span class="gb-button gb-button-28c7ab48 tooltip" data-tooltip="Gratis Proteksi DDOS Attack"><span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"></path></svg></span></span>
-                                                                            </div>
-                                                                            <p class="gb-headline gb-headline-77748c6f">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text"><strong>Web Application</strong> Firewall</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-809be93d">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Nameserver Dilindungi Cloudflare</span>
-                                                                            </p>
-                                                                            <p class="gb-headline gb-headline-6f3728b2">
-                                                                                <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"></path></svg></span><span class="gb-headline-text">Pemindai <strong>Malware</strong></span>
-                                                                            </p>
-                                                                        </div> --}}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
+
                                                 </div>
                                             </div>
                                             {{-- <div class="gb-container gb-container-e1141941 gb-tabs__item">
@@ -1159,39 +1007,27 @@
                                                         </div>
                                                     </div>
                                                 </div> --}}
+                                                @foreach ($enterprise as $data)
                                                 <div class="owl-item active" style="width: 400px; margin-right: 20px;">
                                                     <div class="gb-grid-column gb-grid-column-8ddaae3c">
                                                         <div class="gb-container gb-container-8ddaae3c" id="items">
                                                             <div class="gb-container gb-container-2e08dd44">
                                                                 {{-- <figure class="gb-block-image gb-block-image-4fa9389c"><img loading="lazy" decoding="async" width="64" height="64" class="gb-image gb-image-4fa9389c" src="./DewaBiz.com_ Web Hosting, Server &amp; Domain Murah_files/jettempur.svg" alt="" title="jettempur"></figure> --}}
-                                                                <h2 class="gb-headline gb-headline-06129ccf gb-headline-text">Super Website</h2>
+                                                                <h2 class="gb-headline gb-headline-06129ccf gb-headline-text">{{ $data['title'] }}</h2>
                                                             </div>
-                                                            <p class="gb-headline gb-headline-6b3b8058 gb-headline-text">Fitur lebih lengkap</p>
+                                                            <p class="gb-headline gb-headline-6b3b8058 gb-headline-text">{{ $data['subtitle'] }}</p>
                                                             <div class="gb-container gb-container-e8a20591" id="items">
                                                                 <div class="gb-container gb-container-e96538c5">
+                                                                    @foreach ($data->features as $feature)
                                                                     <p class="gb-headline gb-headline-bd4dc22e">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Flexible, Easy</strong> to Use.</span>
+                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>{{ $feature['name'] }}</span>
                                                                     </p>
-                                                                    <p class="gb-headline gb-headline-bf9067b6">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Product</strong> Sell</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-11da4ff8">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Unlimited</strong> Database</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-c5054135">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Marketer Pro</strong> Included</span>
-                                                                    </p>
-                                                                    {{-- <p class="gb-headline gb-headline-6ee5b6cc">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>cPanel</strong>Control Panel</span>
-                                                                    </p> --}}
-                                                                    <p class="gb-headline gb-headline-ae5b0d0d">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>30-Day</strong> Money-Back Guarantee</span>
-                                                                    </p>
+                                                                    @endforeach
                                                                 </div>
                                                             </div>
                                                             <div class="gb-container gb-container-b503fb22 dashed-border pricing">
                                                                 <div class="gb-container gb-container-356fa213">
-                                                                    <h3 class="gb-headline gb-headline-7c5b873c gb-headline-text">Rp. 55.000</h3>
+                                                                    <h3 class="gb-headline gb-headline-7c5b873c gb-headline-text">{{ formatRupiah($data['price_first_time']) }}</h3>
                                                                     <p class="gb-headline gb-headline-f0582343 gb-headline-text">/bulan</p>
                                                                 </div>
                                                                 <div class="gb-container gb-container-0232a2dd">
@@ -1201,90 +1037,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="owl-item active" style="width: 400px; margin-right: 20px;">
-                                                    <div class="gb-grid-column gb-grid-column-8ddaae3c">
-                                                        <div class="gb-container gb-container-8ddaae3c" id="items">
-                                                            <div class="gb-container gb-container-2e08dd44">
-                                                                {{-- <figure class="gb-block-image gb-block-image-4fa9389c"><img loading="lazy" decoding="async" width="64" height="64" class="gb-image gb-image-4fa9389c" src="./DewaBiz.com_ Web Hosting, Server &amp; Domain Murah_files/jettempur.svg" alt="" title="jettempur"></figure> --}}
-                                                                <h2 class="gb-headline gb-headline-06129ccf gb-headline-text">Business Website</h2>
-                                                            </div>
-                                                            <p class="gb-headline gb-headline-6b3b8058 gb-headline-text">Fitur lebih lengkap</p>
-                                                            <div class="gb-container gb-container-e8a20591" id="items">
-                                                                <div class="gb-container gb-container-e96538c5">
-                                                                    <p class="gb-headline gb-headline-bd4dc22e">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Flexible, Easy</strong> to Use.</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-bf9067b6">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Product</strong> Sell</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-11da4ff8">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Unlimited</strong> Database</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-c5054135">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Business Pro</strong> Included</span>
-                                                                    </p>
-                                                                    {{-- <p class="gb-headline gb-headline-6ee5b6cc">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>cPanel</strong>Control Panel</span>
-                                                                    </p> --}}
-                                                                    <p class="gb-headline gb-headline-ae5b0d0d">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>30-Day</strong> Money-Back Guarantee</span>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="gb-container gb-container-b503fb22 dashed-border pricing">
-                                                                <div class="gb-container gb-container-356fa213">
-                                                                    <h3 class="gb-headline gb-headline-7c5b873c gb-headline-text">Rp. 80.000</h3>
-                                                                    <p class="gb-headline gb-headline-f0582343 gb-headline-text">/bulan</p>
-                                                                </div>
-                                                                <div class="gb-container gb-container-0232a2dd">
-                                                                    <a class="gb-button gb-button-3a5f64e3 gb-button-text gb-button-127ab6b4" href="https://dewabiz.com/hosting-super/">Lihat Detail</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="owl-item active" style="width: 400px; margin-right: 20px;">
-                                                    <div class="gb-grid-column gb-grid-column-8ddaae3c">
-                                                        <div class="gb-container gb-container-8ddaae3c" id="items">
-                                                            <div class="gb-container gb-container-2e08dd44">
-                                                                {{-- <figure class="gb-block-image gb-block-image-4fa9389c"><img loading="lazy" decoding="async" width="64" height="64" class="gb-image gb-image-4fa9389c" src="./DewaBiz.com_ Web Hosting, Server &amp; Domain Murah_files/jettempur.svg" alt="" title="jettempur"></figure> --}}
-                                                                <h2 class="gb-headline gb-headline-06129ccf gb-headline-text">Professional Website</h2>
-                                                            </div>
-                                                            <p class="gb-headline gb-headline-6b3b8058 gb-headline-text">Fitur lebih lengkap</p>
-                                                            <div class="gb-container gb-container-e8a20591" id="items">
-                                                                <div class="gb-container gb-container-e96538c5">
-                                                                    <p class="gb-headline gb-headline-bd4dc22e">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Flexible, Easy</strong> to Use.</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-bf9067b6">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Product</strong> Sell</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-11da4ff8">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Unlimited</strong> Database</span>
-                                                                    </p>
-                                                                    <p class="gb-headline gb-headline-c5054135">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>Professional Pro</strong> Included</span>
-                                                                    </p>
-                                                                    {{-- <p class="gb-headline gb-headline-6ee5b6cc">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>cPanel</strong>Control Panel</span>
-                                                                    </p> --}}
-                                                                    <p class="gb-headline gb-headline-ae5b0d0d">
-                                                                        <span class="gb-icon"><svg viewbox="0 0 16 16" class="bi bi-check-circle-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"></path></svg></span><span class="gb-headline-text"><strong>30-Day</strong> Money-Back Guarantee</span>
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                            <div class="gb-container gb-container-b503fb22 dashed-border pricing">
-                                                                <div class="gb-container gb-container-356fa213">
-                                                                    <h3 class="gb-headline gb-headline-7c5b873c gb-headline-text">Rp. 100.000</h3>
-                                                                    <p class="gb-headline gb-headline-f0582343 gb-headline-text">/bulan</p>
-                                                                </div>
-                                                                <div class="gb-container gb-container-0232a2dd">
-                                                                    <a class="gb-button gb-button-3a5f64e3 gb-button-text gb-button-127ab6b4" href="https://dewabiz.com/hosting-super/">Lihat Detail</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>

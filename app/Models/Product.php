@@ -17,6 +17,7 @@ class Product extends Model
         'end_date',
         'price',
         'code',
+        'stock',
         'is_all_stores',
         'status',
         'status_by_admin',
